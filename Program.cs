@@ -2,14 +2,11 @@
 // Created on: Visual Studio
 // Author: Jacob Waring
 
-using System.ComponentModel.Design;
-using System.Diagnostics.CodeAnalysis;
-
 // Player health and land zones
 int playerHealth = 200;
 string landZone1 = "tilted towers";
 string landZone2 = "loot lake";
-Console.WriteLine("Welcome to Fortnite Battle Royale 1V1");
+Console.WriteLine("Welcome to Fortnite Battle Royale");
 
 // how much health you have still
 Console.WriteLine("Health = 200");
@@ -17,13 +14,13 @@ Console.WriteLine("Health = 200");
 // asking where you want to land
 Console.Write("Where do you want to land? ");
 Console.Write("Tilted Towers or Loot Lake? ");
-string response = Console.ReadLine();
+string response = Console.ReadLine().ToLower();
 
-if (response.ToLower() == landZone1)
+if (response == landZone1)
 {
     Console.WriteLine("You are landing at Tilted Towers");
 }
-else if (response.ToLower() == landZone2)
+else if (response == landZone2)
 {
     Console.WriteLine("You are landing at Loot Lake");
 }
@@ -42,13 +39,13 @@ Console.Write("yes/no ");
 string openChest = "yes";
 string noChest = "no";
 
-string response2 = Console.ReadLine();
+string response2 = Console.ReadLine().ToLower();
 
-if (response2.ToLower() == openChest)
+if (response2 == openChest)
 {
     Console.WriteLine("You opened the chest and got a blue shotgun");
 }
-else if (response2.ToLower() == noChest)
+else if (response2 == noChest)
 {
     Console.WriteLine("You didnt open the chest and got 200 pumped");
     playerHealth = 0;
@@ -77,16 +74,16 @@ while (true)
         //asking if you want to shoot the player
         Console.WriteLine("You see a player to your right, do you shoot him");
         Console.Write("yes/no ");
-        string response3 = Console.ReadLine();
+        string response3 = Console.ReadLine().ToLower();
 
         
-        if (response3.ToLower() == dontShoot)
+        if (response3 == dontShoot)
         {
             Console.WriteLine("you didnt shoot him and got 200 pumped");
             playerHealth = 0;
         }
 
-        else if (response3.ToLower() == shoot)
+        else if (response3 == shoot)
         {   
             // variables for if you want to shoot the other player
             string shoot2 = "yes";
@@ -97,15 +94,15 @@ while (true)
             Console.WriteLine("Health = 200");
             Console.WriteLine("There is one player left to win and he is to your left, do you shoot him?");
             Console.Write("yes/no ");
-            string response4 = Console.ReadLine();
+            string response4 = Console.ReadLine().ToLower();
 
-            if (response4.ToLower() == shoot2)
+            if (response4 == shoot2)
             {
                 Console.WriteLine("You killed him and lived");
                 Console.WriteLine("You win!");
                 return;
             }
-            else if (response4.ToLower() == dontShoot2)
+            else if (response4 == dontShoot2)
             {
                 Console.WriteLine("you didnt shoot him and got 200 pumped");
                 playerHealth = 0;
